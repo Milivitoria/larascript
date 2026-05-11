@@ -1,21 +1,21 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+  NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   PORT: z.coerce.number().int().positive().default(3000),
   DOCS_ENABLED: z
     .string()
     .optional()
-    .transform((value) => value !== 'false'),
-  STATIC_ASSETS_DIR: z.string().default('dist/client'),
+    .transform((value) => value !== "false"),
+  STATIC_ASSETS_DIR: z.string().default("dist/client"),
   SERVE_STATIC: z
     .string()
     .optional()
-    .transform((value) => value !== 'false'),
+    .transform((value) => value !== "false"),
 });
 
 export type AppConfig = {
-  nodeEnv: 'development' | 'test' | 'production';
+  nodeEnv: "development" | "test" | "production";
   port: number;
   docsEnabled: boolean;
   staticAssetsDir: string;

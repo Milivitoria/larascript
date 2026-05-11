@@ -17,11 +17,7 @@ export const success = <TData>(data: TData): ApiSuccess<TData> => ({
   data,
 });
 
-export const failure = (
-  code: string,
-  message: string,
-  details?: unknown,
-): ApiError => ({
+export const failure = (code: string, message: string, details?: unknown): ApiError => ({
   success: false,
   error: {
     code,

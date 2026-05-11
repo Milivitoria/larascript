@@ -1,4 +1,4 @@
-const appElement = document.querySelector<HTMLDivElement>('#app');
+const appElement = document.querySelector<HTMLDivElement>("#app");
 
 if (appElement) {
   appElement.innerHTML = `

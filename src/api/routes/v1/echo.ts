@@ -1,13 +1,13 @@
-import { createRoute, z } from '@hono/zod-openapi';
+import { createRoute, z } from "@hono/zod-openapi";
 
-import { success } from '../../../shared/api-envelope';
+import { success } from "../../../shared/api-envelope";
 
 export const echoRoute = createRoute({
-  method: 'get',
-  path: '/api/v1/echo',
-  summary: 'Echo message',
-  description: 'Echoes a required message query parameter.',
-  tags: ['Utility'],
+  method: "get",
+  path: "/api/v1/echo",
+  summary: "Echo message",
+  description: "Echoes a required message query parameter.",
+  tags: ["Utility"],
   request: {
     query: z.object({
       message: z.string().min(1).max(200),
@@ -15,9 +15,9 @@ export const echoRoute = createRoute({
   },
   responses: {
     200: {
-      description: 'Message echoed',
+      description: "Message echoed",
       content: {
-        'application/json': {
+        "application/json": {
           schema: z.object({
             success: z.literal(true),
             data: z.object({
