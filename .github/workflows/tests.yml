@@ -43,8 +43,8 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
-    - name: Execute tests
-      run: php artisan test
+      - name: Execute tests
+        run: php artisan test
 
   node-quality:
     runs-on: ubuntu-latest
@@ -68,11 +68,5 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Run API tests
-        run: npm run test
-
-      - name: Build static assets
-        run: npm run build:web
-
-      - name: Validate OpenAPI
-        run: npm run validate:openapi
+      - name: Build assets
+        run: npm run build
